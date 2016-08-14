@@ -1,0 +1,29 @@
+{
+  "name": "che-scrapper",
+  "version": "1.0.0",
+  "description": "Scrap web for news",
+  "main": "server.js",
+  "scripts": {
+    "test": "npm test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/briankoech/che-scrapper.git"
+  },
+  "keywords": [
+    "news",
+    "kenya",
+    "nation"
+  ],
+  "author": "Brian Koech <brnkoech@gmail.com>",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/briankoech/che-scrapper/issues"
+  },
+  "homepage": "https://github.com/briankoech/che-scrapper#readme",
+  "dependencies": {
+    "cheerio": "^0.20.0",
+    "express": "^4.14.0",
+    "request": "^2.74.0"
+  }
+}
