@@ -5,7 +5,7 @@ var request = require('request');
 var app = express();
 
 app.get('/nation', function(req, res) {
-  var url = 'http://www.nation.co.ke';
+  var url = 'http://www.standardmedia.co.ke';
 
   request(url, function(err, ress, html) {
     if(err) {
@@ -14,20 +14,21 @@ app.get('/nation', function(req, res) {
       // we have some res and html to show
       // load them to cheerio
       var $ = cheerio.load(html);
-      // get story teasers dom elements
-      var results = [];
-      var classes = ['.five-eight', '.row .three-eight'];
-      classes.forEach(function(val) {
-        var data = $(val).find('.story-teaser').each(function(i, story) {
-          var obj = {};
-          obj.title = $(this).find('h1 a').text() || $(this).find('h2 a').text();
-          obj.url = `${url}${$(this).find('a').attr('href')}`;
-          obj.description = $(this).find('p').text();
-          results.push(obj);
-        });
-      });
 
-      return res.send(results);
+      var results = [];
+      var classes = ['#col-xs-4'];
+
+      classes.forEach(function(val){
+        var data = $(val).find('#sub-stories').each(function(i, story){
+          var obj = {}
+          obj.title = $(this).find('li a').text();
+          obj.url = $(this).find('li a').attr('href');
+          results.push(obj);
+
+        });
+
+      });
+     return res.send(results);
     }
   });
 });
