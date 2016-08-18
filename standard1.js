@@ -25,10 +25,10 @@ app.get('/news1', function(req, res) {
           obj.url = $(this).find('a').attr('href');
          // obj.description = $(this).find('p').text();
           results.push(obj);
-       
+
       });
  return res.send(results);
-      
+
     }
   });
 });
@@ -53,10 +53,10 @@ app.get('/news2', function(req, res) {
           obj.url = $(this).find('a').attr('href');
           obj.time = $(this).find('span').text();
           results.push(obj);
-       
+
       });
  return res.send(results);
-      
+
     }
   });
 });
